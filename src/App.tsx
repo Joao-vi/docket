@@ -1,5 +1,7 @@
+import { Notes } from './features/notes/notes';
+
 function App() {
-  return <div></div>;
+  return <Notes />;
 }
 
 export default App;
