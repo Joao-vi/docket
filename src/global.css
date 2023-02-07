@@ -5,10 +5,11 @@
 @layer base {
   html {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    @apply min-h-screen;
   }
 
-  body {
-    @apply h-full p-5;
+  body,
+  #root {
+    @apply h-screen;
+    max-height: max-content;
   }
 }
