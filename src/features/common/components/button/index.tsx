@@ -19,7 +19,7 @@ export function Button({ children, variants, className, ...rest }: IButton) {
 const styles = cva('flex items-center justify-center', {
   variants: {
     type: {
-      icon: 'p-3 w-fit rounded-full aspect-square bg-black text-white',
+      icon: 'p-3 w-fit rounded-full aspect-square transition-colors bg-zinc-900 hover:bg-zinc-800 text-white hover:text-amber-500',
     },
   },
 });
