@@ -17,4 +17,19 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+
+  <svg aria-hidden="true" class="hidden absolute pointer-events-none invisible">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur" />
+        <feColorMatrix
+          in="blur"
+          type="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -7"
+          result="gooey"
+        />
+        <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
 </html>
