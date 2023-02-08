@@ -17,5 +17,10 @@ interface IColorItem {
 }
 
 const ColorItem = ({ className, id }: IColorItem) => {
-  return <Button id={id} className={`w-7 aspect-square bg-amber-400 rounded-full ${className}`} />;
+  return (
+    <Button
+      id={id}
+      className={`w-7 aspect-square rounded-full ${className} hover:brightness-[.85]`}
+    />
+  );
 };
