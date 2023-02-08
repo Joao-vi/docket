@@ -14,12 +14,14 @@
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwind-merge": "^1.9.1"
+    "tailwind-merge": "^1.9.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/animejs": "^3.1.7",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/uuid": "^9.0.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",

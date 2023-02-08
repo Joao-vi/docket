@@ -1,8 +1,12 @@
 import { createContext, useContext } from 'react';
 
+import { NotesLocalStorageService } from '../../notes/service/notes-service/notes-local-storage-service';
+
 type IAppServices = typeof APP_SERVICES;
 
-const APP_SERVICES = {};
+const APP_SERVICES = {
+  notesService: new NotesLocalStorageService(),
+};
 
 const AppServices = createContext<IAppServices | undefined>(undefined);
 
