@@ -64,7 +64,7 @@ export function NoteList() {
       )}
 
       {data.map((note) => (
-        <NoteCard />
+        <NoteCard key={note.id} {...note} />
       ))}
     </ul>
   );
