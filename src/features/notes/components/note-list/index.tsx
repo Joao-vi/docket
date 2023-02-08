@@ -1,0 +1,51 @@
+import { Bug, CircleNotch, Link } from 'phosphor-react';
+import { useFetchNotes } from '../../queries/use-fetch-notes';
+import { NoteCard } from '../note-card';
+
+export function NoteList() {
+  const { data, isFetching, isLoading, isError } = useFetchNotes();
+
+  if (isLoading) {
+    return (
+      <div className="mt-14 flex flex-col items-center gap-5 text-zinc-600">
+        <CircleNotch className="text-4xl animate-spin" />
+        <span>Hi! We are loading your notes, just a second.</span>
+      </div>
+    );
+  }
+
+  if (!data || isError) {
+    return (
+      <div className="mt-14 flex flex-col items-center gap-5 text-zinc-600">
+        <Bug className="text-4xl" />
+        <span>
+          Oh no, sorry about that, something went wrong, please{' '}
+          <a
+            href=""
+            target="_blank"
+            className="text-amber-400 font-semibold inline-flex items-center gap-1"
+          >
+            contact us
+            <Link className="text-lg" />
+          </a>
+          .
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <ul className="mt-14 flex flex-wrap gap-6">
+      {isFetching && (
+        <div className="absolute top-8 w-full flex items-center justify-center gap-1 text-zinc-600">
+          <CircleNotch className="text-lg animate-spin" />
+          <span>Updating</span>
+        </div>
+      )}
+
+      {data.map((note) => (
+        <NoteCard />
+      ))}
+    </ul>
+  );
+}
