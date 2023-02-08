@@ -1,4 +1,5 @@
-import { Bug, CircleNotch, Link } from 'phosphor-react';
+import { Bug, CircleNotch, Link, XCircle } from 'phosphor-react';
+import { Button } from '../../../common/components/button';
 import { useFetchNotes } from '../../queries/use-fetch-notes';
 import { NoteCard } from '../note-card';
 
@@ -29,6 +30,25 @@ export function NoteList() {
             <Link className="text-lg" />
           </a>
           .
+        </span>
+      </div>
+    );
+  }
+
+  if (data.length === 0) {
+    return (
+      <div className="mt-14 flex flex-col items-center gap-5 text-zinc-600 text-center">
+        <XCircle className="text-4xl" />
+
+        <span>
+          Hmmm, it's seems you don't have any notes created.
+          <span className="block">
+            Let's{' '}
+            <Button className="bg-amber-400 inline px-3 rounded text-zinc-800 font-semibold hover:bg-amber-300">
+              create
+            </Button>{' '}
+            one right away ?{' '}
+          </span>
         </span>
       </div>
     );
