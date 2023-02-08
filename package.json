@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.24.4",
     "animejs": "^3.2.1",
     "class-variance-authority": "^0.4.0",
     "phosphor-react": "^1.4.1",
