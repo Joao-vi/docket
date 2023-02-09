@@ -18,6 +18,7 @@ export class NotesLocalStorageService implements INotesService {
       title: '',
       id: uuidv4(),
       color,
+      isPinned: false,
     };
 
     const notes = this.getNotesStorage();

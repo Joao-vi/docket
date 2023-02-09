@@ -25,6 +25,10 @@ export function NoteCard(props: INote) {
     deleteMutation(props.id);
   };
 
+  const onPinNote = () => {
+    editMutation({ id: props.id, isPinned: !props.isPinned });
+  };
+
   return (
     <motion.li
       layoutId={props.id}
@@ -61,7 +65,12 @@ export function NoteCard(props: INote) {
             <Trash className="text-xl" />
           </Button>
 
-          <Button id="option" variants={{ type: 'icon' }} className="bg-zinc-800">
+          <Button
+            onClick={onPinNote}
+            id="option"
+            variants={{ type: 'icon' }}
+            className={`${props.isPinned ? 'bg-amber-400' : 'bg-zinc-800'}`}
+          >
             <PushPin className="text-xl" />
           </Button>
         </NoteOptions>

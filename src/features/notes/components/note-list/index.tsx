@@ -42,7 +42,7 @@ export function NoteList() {
     );
   }
 
-  if (data.length === 0) {
+  if (data.others?.length === 0 || data.pinned?.length === 0) {
     return (
       <div className="mt-14 flex flex-col items-center gap-5 text-zinc-600 text-center">
         <XCircle className="text-4xl" />
@@ -73,7 +73,7 @@ export function NoteList() {
   }
 
   return (
-    <motion.ul layout className="mt-14 flex flex-wrap gap-6">
+    <motion.ul layout className="mt-14 flex flex-col gap-10">
       {isFetching && (
         <div className="absolute top-8 w-full flex items-center justify-center gap-1 text-zinc-600">
           <CircleNotch className="text-lg animate-spin" />
@@ -81,9 +81,23 @@ export function NoteList() {
         </div>
       )}
 
-      {data.map((note) => (
-        <NoteCard key={note.id} {...note} />
-      ))}
+      <div>
+        <h1 className="mb-5 text-zinc-500 font-semibold">Pinned</h1>
+        <div className="flex flex-wrap gap-6">
+          {data.pinned?.map((note) => (
+            <NoteCard key={note.id} {...note} />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h1 className="mb-5 text-zinc-500 font-semibold">Others</h1>
+        <div className="flex flex-wrap gap-6">
+          {data.others?.map((note) => (
+            <NoteCard key={note.id} {...note} />
+          ))}
+        </div>
+      </div>
     </motion.ul>
   );
 }

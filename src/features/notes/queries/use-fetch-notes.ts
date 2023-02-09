@@ -17,8 +17,11 @@ export const useFetchNotes = () => {
     [data, query]
   );
 
+  const pinned = filterData?.filter((d) => d.isPinned);
+  const others = filterData?.filter((d) => !d.isPinned);
+
   return {
-    data: filterData,
+    data: { pinned, others },
     isLoading,
     isFetching,
     isError,

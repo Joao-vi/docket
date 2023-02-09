@@ -12,6 +12,7 @@ export type INote = {
   title: string;
   content: string;
   color: string;
+  isPinned: boolean;
 };
 
 export type INotePayload = { id: string } & Partial<Omit<INote, 'date' | 'id'>>;
