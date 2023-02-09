@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Bug, CircleNotch, Link, XCircle } from 'phosphor-react';
 import { Button } from '../../../common/components/button';
 import { useFetchNotes } from '../../queries/use-fetch-notes';
@@ -55,7 +56,7 @@ export function NoteList() {
   }
 
   return (
-    <ul className="mt-14 flex flex-wrap gap-6">
+    <motion.ul layout className="mt-14 flex flex-wrap gap-6">
       {isFetching && (
         <div className="absolute top-8 w-full flex items-center justify-center gap-1 text-zinc-600">
           <CircleNotch className="text-lg animate-spin" />
@@ -66,6 +67,6 @@ export function NoteList() {
       {data.map((note) => (
         <NoteCard key={note.id} {...note} />
       ))}
-    </ul>
+    </motion.ul>
   );
 }

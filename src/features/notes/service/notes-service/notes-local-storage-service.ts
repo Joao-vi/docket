@@ -21,7 +21,7 @@ export class NotesLocalStorageService implements INotesService {
     };
 
     const notes = this.getNotesStorage();
-    this.setNotesStorage([...notes, newNote]);
+    this.setNotesStorage([newNote, ...notes]);
 
     return Promise.resolve('A new Note was just added.');
   }
