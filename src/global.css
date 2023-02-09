@@ -29,12 +29,12 @@
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    @apply bg-zinc-100;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    @apply bg-zinc-800 rounded-lg;
   }
 
   /* Handle on hover */
