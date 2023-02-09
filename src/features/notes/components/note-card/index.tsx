@@ -1,16 +1,24 @@
 import { motion } from 'framer-motion';
+import { PushPin, Trash } from 'phosphor-react';
 import { ChangeEvent } from 'react';
+import { Button } from '../../../common/components/button';
 import { debounce } from '../../../common/utils/debounce';
+import { useDeleteNote } from '../../mutations/use-delete-note';
 import { useEditNote } from '../../mutations/use-edit-note';
 
 import { INote } from '../../service/notes-service/i-notes-service';
 import { NoteOptions } from '../note-options';
 
 export function NoteCard(props: INote) {
-  const mutate = useEditNote();
+  const editMutation = useEditNote();
+  const deleteMutation = useDeleteNote();
 
   const onChangeContent = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    mutate({ id: props.id, content: e.target.value });
+    editMutation({ id: props.id, content: e.target.value });
+  };
+
+  const onDeleteNote = () => {
+    deleteMutation(props.id);
   };
 
   return (
@@ -31,7 +39,20 @@ export function NoteCard(props: INote) {
       <div className="flex items-center justify-between">
         <span className="font-normal">{new Date(props.date).toLocaleDateString()}</span>
 
-        <NoteOptions />
+        <NoteOptions>
+          <Button
+            onClick={onDeleteNote}
+            id="option"
+            variants={{ type: 'icon' }}
+            className="bg-zinc-800"
+          >
+            <Trash className="text-xl" />
+          </Button>
+
+          <Button id="option" variants={{ type: 'icon' }} className="bg-zinc-800">
+            <PushPin className="text-xl" />
+          </Button>
+        </NoteOptions>
       </div>
     </motion.li>
   );
