@@ -8,14 +8,16 @@
     @apply text-[88%] sm:text-[90%] lg:text-[95%] 2xl:text-[100%];
   }
 
-  body,
-  #root {
-    @apply min-h-screen;
-    max-height: max-content;
+  body {
+    @apply flex flex-col min-h-screen;
   }
 
   #root {
-    @apply bg-white rounded-tl-3xl;
+    @apply flex-1 flex flex-col bg-white rounded-tl-3xl;
+  }
+
+  #root > * {
+    @apply flex-1;
   }
 
   body {
