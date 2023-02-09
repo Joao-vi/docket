@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { INotesService, INote } from './i-notes-service';
+import { INotesService, INote, INotePayload } from './i-notes-service';
 
 export class NotesLocalStorageService implements INotesService {
   async fetch(): Promise<INote[]> {
@@ -36,14 +36,14 @@ export class NotesLocalStorageService implements INotesService {
     return Promise.resolve('Note deleted with success.');
   }
 
-  async edit(editNote: INote): Promise<any> {
+  async edit(payload: INotePayload): Promise<any> {
     const notes = this.getNotesStorage();
 
     const newNotes = notes.map((note) => {
-      if (editNote.id === note.id) {
+      if (payload.id === note.id) {
         return {
           ...note,
-          ...editNote,
+          ...payload,
         };
       }
 

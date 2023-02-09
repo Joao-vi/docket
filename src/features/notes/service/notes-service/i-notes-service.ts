@@ -1,7 +1,7 @@
 export interface INotesService {
   fetch(): Promise<INote[]>;
   add(color: string): Promise<any>;
-  edit(editNote: INote): Promise<any>;
+  edit(payload: INotePayload): Promise<any>;
   remove(id: string): Promise<any>;
   favorite(): Promise<any>;
 }
@@ -13,3 +13,5 @@ export type INote = {
   content: string;
   color: string;
 };
+
+export type INotePayload = { id: string } & Partial<Omit<INote, 'date' | 'id'>>;
