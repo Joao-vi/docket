@@ -28,7 +28,7 @@ const createCloseAnimation = (ref: any) => {
   timeline.add({
     targets: ref.current,
     duration: 500,
-    maxHeight: [500, 0],
+    maxHeight: ['500px', '0px'],
     opacity: {
       value: [1, 0],
     },
@@ -47,7 +47,7 @@ const createOpenAnimation = (ref: any) => {
     .add({
       targets: ref.current,
       duration: 500,
-      maxHeight: [0, 500],
+      maxHeight: ['0px', '500px'],
       opacity: {
         value: [0, 1],
         duration: 250,

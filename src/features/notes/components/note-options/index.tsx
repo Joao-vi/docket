@@ -33,9 +33,8 @@ export function NoteOptions({ children }: INoteOptions) {
 
       <ul
         ref={optionsRef}
-        className={`${
-          isOpen ? 'pointer-events-auto' : 'pointer-events-none'
-        } z-[2] overflow-hidden absolute bottom-0 mb-[3.5rem] flex flex-col gap-3 bg-zinc-900 px-2 py-4 rounded-2xl`}
+        style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
+        className="z-[2] overflow-hidden absolute bottom-0 mb-[3.5rem] flex flex-col gap-3 bg-zinc-900 px-2 py-4 rounded-2xl"
       >
         {children}
       </ul>
