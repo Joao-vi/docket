@@ -75,29 +75,33 @@ export function NoteList() {
   return (
     <motion.ul layout className="mt-14 flex flex-col gap-10">
       {isFetching && (
-        <div className="absolute top-8 w-full flex items-center justify-center gap-1 text-zinc-600">
+        <div className="absolute top-16 w-full flex items-center justify-center gap-1 text-zinc-600">
           <CircleNotch className="text-lg animate-spin" />
           <span>Updating</span>
         </div>
       )}
 
-      <div>
-        <h1 className="mb-5 text-zinc-500 font-semibold">Pinned</h1>
-        <div className="flex flex-wrap gap-6">
-          {data.pinned?.map((note) => (
-            <NoteCard key={note.id} {...note} />
-          ))}
+      {!!data.pinned?.length && (
+        <div>
+          <h1 className="mb-5 text-zinc-500 font-semibold">Pinned</h1>
+          <div className="flex flex-wrap gap-6">
+            {data.pinned?.map((note) => (
+              <NoteCard key={note.id} {...note} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      <div>
-        <h1 className="mb-5 text-zinc-500 font-semibold">Others</h1>
-        <div className="flex flex-wrap gap-6">
-          {data.others?.map((note) => (
-            <NoteCard key={note.id} {...note} />
-          ))}
+      {!!data.others?.length && (
+        <div>
+          <h1 className="mb-5 text-zinc-500 font-semibold">Others</h1>
+          <div className="flex flex-wrap gap-6">
+            {data.others?.map((note) => (
+              <NoteCard key={note.id} {...note} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </motion.ul>
   );
 }
