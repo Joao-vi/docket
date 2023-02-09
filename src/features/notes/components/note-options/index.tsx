@@ -30,10 +30,6 @@ export function NoteOptions() {
         className="overflow-hidden absolute bottom-0 mb-[3.5rem] flex flex-col gap-3 bg-zinc-900 px-2 py-4 rounded-2xl"
       >
         <Button id="option" variants={{ type: 'icon' }} className="bg-zinc-800">
-          <PencilSimple className="text-xl" weight="regular" />
-        </Button>
-
-        <Button id="option" variants={{ type: 'icon' }} className="bg-zinc-800">
           <Trash className="text-xl" />
         </Button>
 
