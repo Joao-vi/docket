@@ -16,7 +16,7 @@ export function NoteCard(props: INote) {
       </div>
 
       <div className="flex items-center justify-between">
-        <span className="font-normal">{props.date}</span>
+        <span className="font-normal">{new Date(props.date).toLocaleString()}</span>
 
         <NoteOptions />
       </div>
