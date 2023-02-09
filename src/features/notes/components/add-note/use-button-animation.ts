@@ -86,14 +86,17 @@ const createOpenAnimation = () => {
       },
       '-=300'
     )
-    .add({
-      targets: `#${COLORS[1].id}`,
-      delay: anime.stagger(250),
-      duration: 250,
-      translateY: ['-3.3rem', '0rem'],
-      scaleY: [1, 1.8, 1],
-      opacity: [0, 1],
-    });
+    .add(
+      {
+        targets: `#${COLORS[1].id}`,
+        delay: anime.stagger(150),
+        duration: 400,
+        translateY: ['-3.3rem', '0rem'],
+        scaleY: [1, 1.8, 1],
+        opacity: [0, 1],
+      },
+      '-=150'
+    );
 
   return timeline;
 };
