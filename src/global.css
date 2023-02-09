@@ -9,7 +9,7 @@
 
   body,
   #root {
-    @apply h-screen;
+    @apply min-h-screen;
     max-height: max-content;
   }
 
