@@ -4,7 +4,7 @@ import { SearchNotesForm } from '../search-notes-form';
 
 export function MainContent() {
   return (
-    <section className="p-8 flex-1">
+    <section className="py-8 px-4 sm:p-8 flex-1">
       <SearchNotesFormProvider>
         <SearchNotesForm />
 

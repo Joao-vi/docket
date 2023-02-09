@@ -20,7 +20,10 @@ export function AddNote() {
   };
 
   return (
-    <article className="mt-20 flex flex-col gap-8 items-center" style={{ filter: 'url(#gooey)' }}>
+    <article
+      className="mt-5 sm:mt-20 flex flex-col gap-8 items-center"
+      style={{ filter: 'url(#gooey)' }}
+    >
       <Button
         onClick={handleClick}
         id="add-note"

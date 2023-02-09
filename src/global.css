@@ -5,6 +5,7 @@
 @layer base {
   html {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply text-[88%] sm:text-[90%] lg:text-[95%] 2xl:text-[100%];
   }
 
   body,
@@ -18,7 +19,7 @@
   }
 
   body {
-    @apply pl-5 pt-5 bg-zinc-100;
+    @apply sm:pl-5 sm:pt-5 bg-zinc-100;
   }
 
   /* width */
