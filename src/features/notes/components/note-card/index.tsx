@@ -16,10 +16,9 @@ export function NoteCard(props: INote) {
   return (
     <motion.li
       layoutId={props.id}
-      transition={{ duration: 0.3 }}
       initial={{ y: 10, scale: 0.8, opacity: 0.85 }}
       animate={{ y: 0, scale: 1, opacity: 1 }}
-      className={`${props.color} transition focus-within:ring ring-offset-4 flex-1 min-h-[20rem] min-w-[16rem] max-w-[20rem] flex flex-col justify-between px-6 py-7 rounded-3xl font-medium leading-[1.4]`}
+      className={`${props.color} focus-within:ring ring-offset-4 flex-1 min-h-[20rem] min-w-[16rem] max-w-[20rem] flex flex-col justify-between px-6 py-7 rounded-3xl font-medium leading-[1.4]`}
     >
       <textarea
         autoFocus
