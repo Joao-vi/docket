@@ -42,7 +42,7 @@ export function NoteList() {
     );
   }
 
-  if (data.others?.length === 0 || data.pinned?.length === 0) {
+  if (data.others?.length === 0 && data.pinned?.length === 0) {
     return (
       <div className="mt-14 flex flex-col items-center gap-5 text-zinc-600 text-center">
         <XCircle className="text-4xl" />
