@@ -1,12 +1,15 @@
+import { SearchNotesFormProvider } from '../../context/search-notes-context';
 import { NotesGrid } from '../notes-grid';
 import { SearchNotesForm } from '../search-notes-form';
 
 export function MainContent() {
   return (
     <section className="p-8 flex-1">
-      <SearchNotesForm />
+      <SearchNotesFormProvider>
+        <SearchNotesForm />
 
-      <NotesGrid />
+        <NotesGrid />
+      </SearchNotesFormProvider>
     </section>
   );
 }

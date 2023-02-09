@@ -42,7 +42,6 @@ export function NoteCard(props: INote) {
       </header>
 
       <textarea
-        autoFocus
         placeholder="Time to take some notes!"
         className="placeholder:text-zinc-800 resize-none focus:outline-none w-full h-full bg-transparent"
         defaultValue={props.content}

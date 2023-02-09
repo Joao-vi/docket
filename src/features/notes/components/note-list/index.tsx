@@ -5,7 +5,7 @@ import { useFetchNotes } from '../../queries/use-fetch-notes';
 import { NoteCard } from '../note-card';
 
 export function NoteList() {
-  const { data, isFetching, isLoading, isError } = useFetchNotes();
+  const { queryInput, data, isFetching, isLoading, isError } = useFetchNotes();
 
   if (isLoading) {
     return (
@@ -41,16 +41,24 @@ export function NoteList() {
       <div className="mt-14 flex flex-col items-center gap-5 text-zinc-600 text-center">
         <XCircle className="text-4xl" />
 
-        <span>
-          Hmmm, it's seems you don't have any notes created.
-          <span className="block">
-            Let's{' '}
-            <Button className="bg-amber-400 inline px-3 rounded text-zinc-800 font-semibold hover:bg-amber-300">
-              create
-            </Button>{' '}
-            one right away ?{' '}
+        {queryInput === '' && (
+          <span>
+            Hmmm, it's seems you don't have any notes created.
+            <span className="block">
+              Let's{' '}
+              <Button className="bg-amber-400 inline px-3 rounded text-zinc-800 font-semibold hover:bg-amber-300">
+                create
+              </Button>{' '}
+              one right away ?{' '}
+            </span>
           </span>
-        </span>
+        )}
+
+        {queryInput !== '' && (
+          <span>
+            Ops, <span className="text-amber-400 font-semibold">{queryInput}</span> was not found.
+          </span>
+        )}
       </div>
     );
   }
