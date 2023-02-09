@@ -13,7 +13,7 @@ export class NotesLocalStorageService implements INotesService {
 
   async add(color: string): Promise<any> {
     const newNote: INote = {
-      content: 'This is a Docket note.',
+      content: '',
       date: new Date().toString(),
       title: '',
       id: uuidv4(),
