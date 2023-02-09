@@ -33,7 +33,9 @@ export function AddNote() {
         <Plus className="text-2xl" weight="bold" />
       </Button>
 
-      <ColorsList />
+      <div className={`${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+        <ColorsList />
+      </div>
     </article>
   );
 }
