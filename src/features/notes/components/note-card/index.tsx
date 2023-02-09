@@ -17,6 +17,10 @@ export function NoteCard(props: INote) {
     editMutation({ id: props.id, content: e.target.value });
   };
 
+  const onChangeTitle = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    editMutation({ id: props.id, title: e.target.value });
+  };
+
   const onDeleteNote = () => {
     deleteMutation(props.id);
   };
@@ -28,6 +32,15 @@ export function NoteCard(props: INote) {
       animate={{ y: 0, scale: 1, opacity: 1 }}
       className={`${props.color} focus-within:ring ring-offset-4 flex-1 min-h-[20rem] min-w-[16rem] max-w-[20rem] flex flex-col justify-between px-6 py-7 rounded-3xl font-medium leading-[1.4]`}
     >
+      <header className="mb-2">
+        <input
+          placeholder="What I need to do ?"
+          onChange={debounce(onChangeTitle)}
+          defaultValue={props.title}
+          className="w-full bg-transparent focus:outline-none placeholder:text-zinc-800 font-bold"
+        />
+      </header>
+
       <textarea
         autoFocus
         placeholder="Time to take some notes!"
