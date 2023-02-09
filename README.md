@@ -31,7 +31,7 @@
 
 ## How to run 
 
-Warning: Since I'm using yarn as main package manager for this project, it's recommend to use it as well.
+Warning: As I'm using yarn as main package manager for this project, it's recommend to use it as well.
 
 1. Clone
 2. yarn or yarn install -> Install all dependencies
