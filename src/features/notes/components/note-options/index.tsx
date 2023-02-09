@@ -1,5 +1,5 @@
-import { DotsThreeOutline, PencilSimple, Trash, PushPin } from 'phosphor-react';
-import { Children, useReducer } from 'react';
+import { DotsThreeOutline } from 'phosphor-react';
+import { useReducer } from 'react';
 
 import { Button } from '../../../common/components/button';
 import { useAnimation } from './use-animation';
@@ -29,9 +29,11 @@ export function NoteOptions({ children }: INoteOptions) {
         <DotsThreeOutline className="text-xl" />
       </Button>
 
+      {isOpen && <div onClick={handleToggle} className="z-[1] fixed inset-0" />}
+
       <ul
         ref={optionsRef}
-        className="overflow-hidden absolute bottom-0 mb-[3.5rem] flex flex-col gap-3 bg-zinc-900 px-2 py-4 rounded-2xl"
+        className="z-[2] overflow-hidden absolute bottom-0 mb-[3.5rem] flex flex-col gap-3 bg-zinc-900 px-2 py-4 rounded-2xl"
       >
         {children}
       </ul>
